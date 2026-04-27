@@ -5,6 +5,13 @@ import { ProjectCard } from "./ProjectCard";
 
 const projects = [
   {
+    title: "Sentinel Alpha",
+    description: "An autonomous research system hunting for Sentiment Arbitrage via a multi-agent pipeline. Scrapes raw financial data, utilizes Claude for sentiment analysis on corporate language, and queries a RAG index for historical market precedents.",
+    link: "https://sentinel.pletkalabs.dev",
+    tags: ["Agentic Workflows", "RAG", "Automation"],
+    imageUrl: "/images/sentinel-alpha.svg",
+  },
+  {
     title: "VantageBid",
     description: "Leading development of an AI platform that automates construction bidding via autonomous quote-analysis workflows. Implementing semantic search and vector-database algorithms to match contractors with relevant project bids.",
     link: "https://www.vantagebid.ai/",
