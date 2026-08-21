@@ -1,61 +1,78 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ProjectCard } from "./ProjectCard";
+import { FolderGit2 } from "lucide-react";
+import { ProjectCard, type ProjectCardProps } from "./ProjectCard";
+import { SectionHeading } from "./SectionHeading";
 
-const projects = [
+const projects: ProjectCardProps[] = [
   {
-    title: "Sentinel Alpha",
-    description: "An autonomous research system hunting for Sentiment Arbitrage via a multi-agent pipeline. Scrapes raw financial data, utilizes Claude for sentiment analysis on corporate language, and queries a RAG index for historical market precedents.",
-    link: "https://sentinel.pletkalabs.dev",
-    tags: ["Agentic Workflows", "RAG", "Automation"],
-    imageUrl: "/images/sentinel-alpha.svg",
+    title: "Gauntlet Development Harness",
+    role: "Open Source Contributor",
+    link: "https://github.com/johnpletka/gauntlet",
+    linkLabel: "github.com/johnpletka/gauntlet",
+    imageUrl: "/images/gauntlet.svg",
+    bullets: [
+      "AI software development harness for spec-driven development.",
+      "Multi-agent orchestration engine that breaks complex PRDs into context-aware phases, with automatic adversarial review and correction cycles at every stage.",
+    ],
+    tags: ["Multi-Agent Orchestration", "Spec-Driven Development", "Open Source"],
   },
   {
-    title: "VantageBid",
-    description: "Leading development of an AI platform that automates construction bidding via autonomous quote-analysis workflows. Implementing semantic search and vector-database algorithms to match contractors with relevant project bids.",
-    link: "https://www.vantagebid.ai/",
-    tags: ["LLMs", "Vector Databases", "Next.js"],
-    imageUrl: "/images/vantagebid.jpg",
+    title: "Sentinel Alpha",
+    role: "Creator & Developer",
+    link: "https://sentinel.pletkalabs.dev",
+    linkLabel: "sentinel.pletkalabs.dev",
+    imageUrl: "/images/sentinel-alpha.svg",
+    bullets: [
+      "Autonomous research system hunting for sentiment arbitrage through a multi-agent pipeline.",
+      "Scrapes raw financial data, uses Claude for sentiment analysis on corporate language, and queries a RAG index for historical market precedents.",
+    ],
+    tags: ["Agentic Workflows", "RAG", "Claude"],
+  },
+  {
+    title: "Linear Algebra Hub",
+    role: "Creator & Developer",
+    link: "https://basis.pletkalabs.dev/",
+    linkLabel: "basis.pletkalabs.dev",
+    imageUrl: "/images/linear-algebra.png",
+    bullets: [
+      "Built an interactive linear algebra learning platform in React, TypeScript, Vite, and Tailwind spanning a full course from systems of equations through vector spaces and linear independence.",
+      "Integrated the Gemini API for generated explanations, rendered rich LaTeX math with KaTeX, added interactive graphing with Mafs, and supported PDF course-material ingestion.",
+    ],
+    tags: ["React", "Gemini API", "KaTeX"],
   },
   {
     title: "Green on Demand",
-    description: "Sustainability tech platform. Collected and validated renewable energy-system datasets. Built analysis scripts and dashboards to track load behavior and support power-study evaluations for multi-industry projects.",
+    role: "Lead AI Developer",
     link: "https://www.greenondemand.ai/",
-    tags: ["RAG", "Data Analysis", "Python"],
+    linkLabel: "greenondemand.ai",
     imageUrl: "/images/green-on-demand.jpg",
-  },
-  {
-    title: "TheOfficial.ai",
-    description: "Contributing to a generative AI platform specializing in digital avatars and autonomous reasoning agents. Engineered a Chain of Thought (CoT) module using LangChain and Gemini API for AI agent workflows.",
-    link: "https://www.theofficial.ai/",
-    tags: ["Agentic Workflows", "Chain-of-Thought", "LangChain"],
-    imageUrl: "/images/official-ai.jpg",
-  },
-  {
-    title: "Linear Algebra Learning Hub",
-    description: "An interactive educational platform designed to simplify complex linear algebra concepts. Features dynamic visualizer tools and step-by-step problem-solving modules.",
-    link: "https://basis.pletkalabs.dev/",
-    tags: ["Education Tech", "React", "Interactive Visualizations"],
-    imageUrl: "/images/linear-algebra.png",
+    bullets: [
+      "Collected and validated renewable energy-system datasets supporting reliability, compliance checks, and early fault detection.",
+      "Built analysis scripts and dashboards to track load behavior and support power-study evaluations for multi-industry projects.",
+      "Mapped system performance to rebate and incentive compliance requirements and prepared technical summaries of equipment performance, deviations, and corrective actions.",
+    ],
+    tags: ["Data Analysis", "Python", "Dashboards"],
   },
 ];
 
 export function ProjectsSection() {
   return (
-    <section className="py-16 border-t border-slate-800/50">
+    <section id="projects" className="py-16 border-t border-slate-800/50 scroll-mt-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl font-bold text-slate-200 mb-8">Selected Projects</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <SectionHeading title="Technical Projects" icon={FolderGit2} />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
+              className="h-full"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

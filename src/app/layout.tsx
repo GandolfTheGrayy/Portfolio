@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "William Pletka | AI Automation Engineer",
-  description: "Portfolio of William Pletka, focusing on LLM orchestration, agentic workflows, and RAG.",
+  title: "Will Pletka | AI-Focused Software Engineer",
+  description:
+    "Portfolio of Will Pletka — AI-focused software engineer building production agentic systems, LLM orchestration, and RAG.",
 };
 
 export default function RootLayout({
