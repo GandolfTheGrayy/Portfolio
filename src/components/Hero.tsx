@@ -26,7 +26,7 @@ const contactLinks = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/will-pletka",
+    href: "https://www.linkedin.com/in/will-pletka-5041b5252",
     icon: FaLinkedin,
   },
   {
